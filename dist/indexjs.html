@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script src="jquery-1.12.3.js"></script>
+	<script type = "text/javascript" language = "JavaScript"></script>
+	<script>
+	
+	function assyncRequest(){
+		var xmlhttp = new XMLHttpRequest();
+		var url = "http://192.168.1.109:8080/list";
+		xmlhttp.open("GET", url, true);
+		xmlhttp.overrideMimeType("application/json");  
+		xmlhttp.send();
+		return xmlhttp.responseText;
+		
+		var json = JSON.parse(xmlhttp.responseText);
+		console.log(json);
+		var i = findElement(By.id("chave").value);
+		var out = "";
+		out+= 'Nome: ' + json[i].nome + '<br />';
+		out+='Valor: ' + json[i].valor + '<br />';
+		out+='Status: ' + json[i].status + '<br />';
+		out+='Estoque: ' + json[i].estoque + '<br />';
+		findElement(By.id("conteudo").value).html(out);		
+	}
+		
+	</script>
+</head>
+
+<body>
+	<input id="chave" type ="text"><br>
+	<!--<button id="botao"> Botao </button>-->
+	<button onclick ="assyncRequest()">Botao </button>
+	<div id="conteudo">
+	</div>
+</body>
+</html>
