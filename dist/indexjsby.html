@@ -8,11 +8,12 @@
 </head>
 <body>
 	<div class="menu">
-		<input id="listatodos" type="radio"/>Lista todos<br>
+		<button id="botao" onclick = "assyncRequest()">Listar todos </button>
 	</div>
+	
 	<div id="caixa">
 		<form id="caixapesquisa" action="#" method="POST">
-			<input id="chave" type="text" value="Digite aqui" onfocus="this.value='';"/>
+			<input id="chave" type="text" placeholder="Digite aqui" onfocus="this.value='';"/>
 		</form>
 		</br>
 		<button onclick ="assyncRequest()">Pesquisar </button>
