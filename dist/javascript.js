@@ -1,19 +1,21 @@
 var i;
-var nome;
 
+	
 	function assyncRequest(){
 		i = document.getElementById("chave").value;
-		nome = document.getElementById("chavenome").value;
-
+		var valor = isNaN(i);
 			var xmlhttp = new XMLHttpRequest();
 			
-			if (i == "") {
-				var url ="http://192.168.1.109:8080/product?nome="+nome;
+			
+			if (valor == true) {
+				var url ="http://192.168.1.109:8080/product?nome="+i;
 			}
-			if (nome == ""){
+			
+			if (valor == false){
 				var url ="http://192.168.1.109:8080/product?chave="+i;
 			}
 			
+			console.log(valor);
 			xmlhttp.onreadystatechange = function (){
 				if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
 					var myArr = JSON.parse(xmlhttp.responseText);
