@@ -1,0 +1,38 @@
+#caixa {
+	background-color:white;
+	text-align: center;
+	padding: 30px;
+	margin: 10px;
+}
+#conteudo{
+	background-color:white;
+	margin: 10px;
+	padding: -20px;
+	overflow-y:auto;
+}
+
+table{
+	background-color:white;
+	left: 600px;
+	width: 480px;
+	border: black;
+	color: black;
+	text-align:center;
+	margin: 0 auto;
+}
+
+/*@media only screen and (min-width: 210px) and (max-width:319px){
+	#caixa {margin: -10px; text-align:center; width:90%;}
+	
+	#conteudo{
+		background-color:white;
+		text-align:left;
+	}
+	table{
+		padding:20px;
+		margin: -20px;
+		width: auto;
+		background-color:blue;
+	}
+	 
+}*/

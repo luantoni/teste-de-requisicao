@@ -1,11 +1,22 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<title>Teste de requisição</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="UTF-8">
 	<script src="javascript.js"> </script>
 </head>
 <body>
-	<input id="chave"> Campo<br>
-	<button onclick ="assyncRequest()">Pesquisar </button>
+	<div class="menu">
+		<input id="listatodos" type="radio"/>Lista todos<br>
+	</div>
+	<div id="caixa">
+		<form id="caixapesquisa" action="#" method="POST">
+			<input id="chave" type="text" value="Digite aqui" onfocus="this.value='';"/>
+		</form>
+		</br>
+		<button onclick ="assyncRequest()">Pesquisar </button>
 	<div id="conteudo"></div>
+	</div>
 </body>
 </html>
