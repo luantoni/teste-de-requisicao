@@ -1,0 +1,13 @@
+https://xhr.spec.whatwg.org/
+http://www.w3schools.com/json/tryit.asp?filename=tryjson_http
+http://www.w3schools.com/json/json_http.asp
+http://stackoverflow.com/questions/2985819/using-variable-in-data-of-getjason-callback-function
+http://www.w3schools.com/html/html_forms.asp
+https://xhr.spec.whatwg.org/#dom-xmlhttprequest-headers_received
+http://stackoverflow.com/questions/9074807/how-to-convert-json-array-from-ajax-responsetext-in-to-javascript-array
+https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseText
+http://tableless.com.br/raspagem-de-dados-com-node-js/
+http://tedk.com.br/blog/javascript-ajax-dhtml/listando-valores-de-um-json-com-jquery/
+http://stackoverflow.com/questions/12070631/how-to-use-json-file-in-html-code
+http://www.botecodigital.info/jquery/trocando-dados-utilizando-json/
+http://www.w3schools.com/jsref/event_onclick.asp
