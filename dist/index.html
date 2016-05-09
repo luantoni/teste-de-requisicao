@@ -6,20 +6,19 @@
 	<meta charset="UTF-8">
 	<script src="jquery-1.12.3.min.js"></script>
 	<script src="javascript.js"> </script>
-	
 </head>
 <body>
-	<div class="menu">
-		<button id="botao">Listar todos </button>
-	</div>
-	
 	<div id="caixa">
 		<form id="caixapesquisa" action="#" method="POST">
 			<input id="chave" type="text" placeholder="Digite aqui" onfocus="this.value='';"/>
 		</form>
 		</br>
-		<button onclick ="assyncRequest()">Pesquisar </button>
-	<div id="conteudo"></div>
+		<button id="botaoum" onclick ="assyncRequest()">Pesquisar </button>
+		<div class="menu">
+			<button id="botaotodos">Listar todos </button>
+		</div>
+		<button id="botaolimpar" onClick="limpa()">Limpar</button>
+		<div id="conteudo"></div>
 	</div>
 </body>
 </html>

@@ -4,7 +4,7 @@ var lebotao;
 var url;
 	
 	$( document ).ready(function() {
-		$('#botao').click(function(){
+		$("#botaotodos").click(function(){
 			$.getJSON("http://192.168.1.109:8080/list", function (data){
 				var i;
 				var out = "";
@@ -22,6 +22,10 @@ var url;
 		});
 	});
 	
+	function limpa(){
+		document.getElementById("conteudo").innerHTML = "";
+	}
+
 	function assyncRequest(){
 		i = document.getElementById("chave").value;
 		var valor = isNaN(i);
@@ -30,27 +34,16 @@ var url;
 		
 		if (valor == true) {
 			url ="http://192.168.1.109:8080/product?nome="+i;
-			lista=0;
 		}
 		
 		if (valor == false){
 			url ="http://192.168.1.109:8080/product?chave="+i;
-			lista=0;
 		}
-		
-
 		
 		xmlhttp.onreadystatechange = function (){
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
 				var myArr = JSON.parse(xmlhttp.responseText);
-				
-				if (lista == 0){
 					estoque(myArr);
-				}
-				
-				if (lista == 1){
-					estoque2(myArr);
-				}
 			}
 		}; 
 		
@@ -66,19 +59,6 @@ var url;
 			out+='<td>' + produtos.status + '</td>';
 			out+='<td>' + produtos.estoque + '</td></tr></table>';
 			document.getElementById("conteudo").innerHTML = out;
-		}
-		
-		function estoque2(produtos){
-			var x;
-			for (x = 0; x < produtos.length; x++){
-				var out = "";
-				out+='<table border="1"><tr><th>Produto</th><th>Valor</th><th>Status</th><th>Estoque</th></tr>';
-				out+= '<tr><td>' + produtos[x].nome + '</td>';
-				out+='<td>' + produtos[x].valor + '</td>';
-				out+='<td>' + produtos[x].status + '</td>';
-				out+='<td>' + produtos[x].estoque + '</td></tr></table>';
-				document.getElementById("conteudo").innerHTML = out;
-			}
 		}
 	}
 		

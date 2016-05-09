@@ -1,38 +1,42 @@
 #caixa {
-	background-color:white;
+	background-color:black;
 	text-align: center;
 	padding: 30px;
 	margin: 10px;
+	border-radius: 10px;
+	border: 8px double grey;
+	height: 500px; 
 }
 #conteudo{
-	background-color:white;
+	background-color:black;
 	margin: 10px;
 	padding: -20px;
 	overflow-y:auto;
 }
 
+.menu{
+	text-align: center;
+	padding: 5px;
+	margin: 10px;
+}
+
+#botaoum, #botaolimpar, #botaotodos{
+	border-radius: 10px;
+	background-color:white;
+}
+
+#chave{
+	border-radius: 10px;
+}
 table{
 	background-color:white;
+	padding: 20px;
 	left: 600px;
 	width: 480px;
 	border: black;
 	color: black;
 	text-align:center;
 	margin: 0 auto;
+	border-radius: 10px;
+	box-shadow:0 0 20px white;
 }
-
-/*@media only screen and (min-width: 210px) and (max-width:319px){
-	#caixa {margin: -10px; text-align:center; width:90%;}
-	
-	#conteudo{
-		background-color:white;
-		text-align:left;
-	}
-	table{
-		padding:20px;
-		margin: -20px;
-		width: auto;
-		background-color:blue;
-	}
-	 
-}*/
