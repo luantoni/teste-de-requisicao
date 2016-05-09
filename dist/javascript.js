@@ -1,7 +1,27 @@
 var i;
 var lista;
 var lebotao;
-
+var url;
+	
+	$( document ).ready(function() {
+		$('#botao').click(function(){
+			$.getJSON("http://192.168.1.109:8080/list", function (data){
+				var i;
+				var out = "";
+				out+='<table border="1"><tr><th>Chave</th><th>Produto</th><th>Valor</th><th>Status</th><th>Estoque</th></tr>';
+				for (i=0; i < data.length; i++){
+				out+= '<tr><td>' + data[i].chave + '</td>';
+				out+= '<td>' + data[i].nome + '</td>';
+				out+='<td>' + data[i].valor + '</td>';
+				out+='<td>' + data[i].status + '</td>';
+				out+='<td>' + data[i].estoque + '</td></tr>';
+				}
+				'</table>'
+			$("#conteudo").html(out);
+		});
+		});
+	});
+	
 	function assyncRequest(){
 		i = document.getElementById("chave").value;
 		var valor = isNaN(i);
@@ -9,20 +29,16 @@ var lebotao;
 		var xmlhttp = new XMLHttpRequest();
 		
 		if (valor == true) {
-			var url ="http://192.168.1.109:8080/product?nome="+i;
+			url ="http://192.168.1.109:8080/product?nome="+i;
 			lista=0;
 		}
 		
 		if (valor == false){
-			var url ="http://192.168.1.109:8080/product?chave="+i;
+			url ="http://192.168.1.109:8080/product?chave="+i;
 			lista=0;
 		}
 		
-		if (document.getElementById('botao').click()){
-			var url ="http://192.168.1.109:8080/list";
-			lista=1;
-		}
-		
+
 		
 		xmlhttp.onreadystatechange = function (){
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
@@ -65,4 +81,4 @@ var lebotao;
 			}
 		}
 	}
-			
+		
