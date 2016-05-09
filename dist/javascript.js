@@ -24,13 +24,13 @@ var url;
 	
 	function limpa(){
 		document.getElementById("conteudo").innerHTML = "";
+		document.getElementById("chave").innerHTML = '';
 	}
 
 	function assyncRequest(){
 		i = document.getElementById("chave").value.toLowerCase();
 		if (i != ""){
 			var valor = isNaN(i);
-			console.log(valor);
 			var xmlhttp = new XMLHttpRequest();
 			
 			if (valor == true) {
