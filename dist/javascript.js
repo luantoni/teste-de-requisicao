@@ -8,7 +8,7 @@ var url;
 	
 	function limpa(){
 		document.getElementById("conteudo").innerHTML = "";
-		/*document.getElementById("chave").innerHTML = '';*/
+		document.getElementById("chave").innerHTML = "Ola";
 	}
 
 	function teste(){
