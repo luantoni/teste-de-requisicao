@@ -27,38 +27,40 @@ var url;
 	}
 
 	function assyncRequest(){
-		i = document.getElementById("chave").value;
-		var valor = isNaN(i);
-		
-		var xmlhttp = new XMLHttpRequest();
-		
-		if (valor == true) {
-			url ="http://192.168.1.109:8080/product?nome="+i;
-		}
-		
-		if (valor == false){
-			url ="http://192.168.1.109:8080/product?chave="+i;
-		}
-		
-		xmlhttp.onreadystatechange = function (){
-			if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
-				var myArr = JSON.parse(xmlhttp.responseText);
-					estoque(myArr);
+		i = document.getElementById("chave").value.toLowerCase();
+		if (i != ""){
+			var valor = isNaN(i);
+			console.log(valor);
+			var xmlhttp = new XMLHttpRequest();
+			
+			if (valor == true) {
+				url ="http://192.168.1.109:8080/product?nome="+i;
 			}
-		}; 
-		
-		xmlhttp.open("GET", url, true);
-		xmlhttp.send();
-		
-		function estoque(produtos){
-			var out = "";
-			out+='<table border="1"><tr><th>Chave</th><th>Produto</th><th>Valor</th><th>Status</th><th>Estoque</th></tr>';
-			out+= '<tr><td>' + produtos.chave + '</td>';
-			out+= '<td>' + produtos.nome + '</td>';
-			out+='<td>' + produtos.valor + '</td>';
-			out+='<td>' + produtos.status + '</td>';
-			out+='<td>' + produtos.estoque + '</td></tr></table>';
-			document.getElementById("conteudo").innerHTML = out;
+			
+			if (valor == false){
+				url ="http://192.168.1.109:8080/product?chave="+i;
+			}
+			
+			xmlhttp.onreadystatechange = function (){
+				if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
+					var myArr = JSON.parse(xmlhttp.responseText);
+						estoque(myArr);
+				}
+			}; 
+			
+			xmlhttp.open("GET", url, true);
+			xmlhttp.send();
+			
+			function estoque(produtos){
+				var out = "";
+				out+='<table border="1"><tr><th>Chave</th><th>Produto</th><th>Valor</th><th>Status</th><th>Estoque</th></tr>';
+				out+= '<tr><td>' + produtos.chave + '</td>';
+				out+= '<td>' + produtos.nome + '</td>';
+				out+='<td>' + produtos.valor + '</td>';
+				out+='<td>' + produtos.status + '</td>';
+				out+='<td>' + produtos.estoque + '</td></tr></table>';
+				document.getElementById("conteudo").innerHTML = out;			
+			}
 		}
 	}
 		

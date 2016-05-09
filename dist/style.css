@@ -1,14 +1,14 @@
 #caixa {
-	background-color:black;
+	background-color: #003300;
 	text-align: center;
-	padding: 30px;
+	padding: 20px;
 	margin: 10px;
 	border-radius: 10px;
 	border: 8px double grey;
-	height: 500px; 
+	height: 450px; 
 }
 #conteudo{
-	background-color:black;
+	background-color: #003300;
 	margin: 10px;
 	padding: -20px;
 	overflow-y:auto;
@@ -28,8 +28,29 @@
 #chave{
 	border-radius: 10px;
 }
+h1 {
+	text-align: center;
+	color: white;
+}
+
+header{
+	background-image: url("download (1).jpg");
+	border-radius: 10px;
+	box-shadow:0 0 20px #003300;
+	margin: 10px;
+	font-size: 170%;
+}
+
+input{
+	font-size: 170%;
+	text-align: center;
+}
+button{
+	font-size: 120%;
+}
 table{
 	background-color:white;
+	font-size: 120%;
 	padding: 20px;
 	left: 600px;
 	width: 480px;
@@ -39,4 +60,11 @@ table{
 	margin: 0 auto;
 	border-radius: 10px;
 	box-shadow:0 0 20px white;
+}
+
+@media only screen and (max-width:420px){
+input{
+	font-size: 100%;
+	text-align: center;
+}
 }
