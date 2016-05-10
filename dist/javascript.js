@@ -1,5 +1,4 @@
 var url;
-
 	function todos(){
 		lista=2;
 		url= "http://192.168.1.109:8080/list";
@@ -8,12 +7,12 @@ var url;
 	
 	function limpa(){
 		document.getElementById("conteudo").innerHTML = "";
-		document.getElementById("chave").innerHTML = "Ola";
+		document.getElementById("chave").value = "";
 	}
 
 	function teste(){
-		var lista;
 		var i = document.getElementById("chave").value.toLowerCase();
+		var lista;
 		if (i != ""){
 			var valor = isNaN(i);
 			lista = 1;
@@ -43,9 +42,8 @@ var url;
 	
 	function estoque(produtos, lista){
 		var out = "";
-		
-		if (lista == 1){
-			out+='<table border="1"><tr><th>Chave</th><th>Produto</th><th>Valor</th><th>Status</th><th>Estoque</th></tr>';
+		out+='<table border="1"><tr><th>Chave</th><th>Produto</th><th>Valor</th><th>Status</th><th>Estoque</th></tr>';
+		if (lista == 1){			
 			out+= '<tr><td>' + produtos.chave + '</td>';
 			out+= '<td>' + produtos.nome + '</td>';
 			out+='<td>' + produtos.valor + '</td>';
@@ -54,7 +52,6 @@ var url;
 		}
 		
 		if (lista == 2){
-			out+='<table border="1"><tr><th>Chave</th><th>Produto</th><th>Valor</th><th>Status</th><th>Estoque</th></tr>';
 			for (i=0; i < produtos.length; i++){
 				out+= '<tr><td>' + produtos[i].chave + '</td>';
 				out+= '<td>' + produtos[i].nome + '</td>';
@@ -65,7 +62,7 @@ var url;
 			'</table>'
 		}
 		document.getElementById("conteudo").innerHTML = out;			
+	
 	}
-
 
 		
