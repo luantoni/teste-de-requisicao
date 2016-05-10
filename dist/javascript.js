@@ -2,6 +2,7 @@ var url;
 	function todos(){
 		lista=2;
 		url= "http://192.168.1.109:8080/list";
+		document.getElementById("chave").value = "Todos os itens";
 		assyncRequest(lista);
 	}
 	
@@ -32,7 +33,8 @@ var url;
 		xmlhttp.onreadystatechange = function (){
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200){
 				var myArr = JSON.parse(xmlhttp.responseText);
-					estoque(myArr, lista);
+					/*estoque(myArr, lista);*/
+					document.getElementById("tabela").innerHTML = xmlhttp.responseText;
 			}
 		}; 
 		
